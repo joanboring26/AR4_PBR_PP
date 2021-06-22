@@ -71,7 +71,7 @@ Material:
     - _Parallax: 0.02
     - _PositionX: 0.5
     - _PositionY: 0.5
-    - _PowForce: 1.01
+    - _PowForce: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -79,8 +79,9 @@ Material:
     - _ZWrite: 1
     - _deformationX: 0
     - _deformationY: 0
-    - _lens_feathering: 1
-    - _lens_radius: 0.186
+    - _lens_feathering: 0.537
+    - _lens_radius: 0.662
+    - _lens_squaring: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -4,12 +4,13 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
         _lens_radius("Lens radius", Range(0, 1)) = 0.5
+        _lens_squaring("Lens Squaring", Range(1,10)) = 1
         _lens_feathering("Lens feathering", Range(0, 1)) = 0.5
         _PositionX("Position X", Range(0, 1)) = 0.5 
         _PositionY("Position Y", Range(0, 1)) = 0.5
         _deformationX("deformation_X", Range(-1,1)) = 0
         _deformationY("deformation_Y", Range(-1,1)) = 0
-        _PowForce("Pow", Range(0,5)) = 0
+        
     }
     SubShader
     {
@@ -47,20 +48,22 @@
             sampler2D _MainTex;
             float _lens_radius;
             float _lens_feathering;
+            float _lens_squaring;
             float _deformationY;
             float _deformationX;
             float _NegativedeformationX;
             float _NegativedeformationY;
-            float _PowForce;
             float _PositionX;
             float _PositionY;
             fixed4 frag (v2f i) : SV_Target
             {
                 float2 texcoord = i.uv;
 	            float4 color = tex2D( _MainTex, i.uv);
-                float dist = distance(texcoord, float2(_PositionX + (texcoord.y * texcoord.y) * _deformationX, 
-                                                       _PositionY + (texcoord.x * texcoord.x) * _deformationY));
-               // dist *= dist * _PowForce;
+               /* float dist = distance(texcoord, float2(_PositionX + (texcoord.y * texcoord.y) * _deformationX, 
+                                                       _PositionY + (texcoord.x * texcoord.x) * _deformationY));*/
+                
+                float dist = distance(pow(abs(texcoord), _lens_squaring), float2(_PositionX + texcoord.x * _deformationX, _PositionY + texcoord.y * _deformationY));
+
                 float v = smoothstep(_lens_radius,(_lens_radius-0.001)*_lens_feathering, dist);
 	            return color * float4(v,v,v,1);
                 //return col;
