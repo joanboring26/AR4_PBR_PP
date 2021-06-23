@@ -120,7 +120,7 @@ MonoBehaviour:
     value: 1
   lensRadius:
     overrideState: 1
-    value: 0.683
+    value: 0.859
   lensFeathering:
     overrideState: 1
     value: 0.5
@@ -132,7 +132,7 @@ MonoBehaviour:
     value: 0.5
   deformationX:
     overrideState: 1
-    value: 0.411
+    value: 0
   deformationY:
     overrideState: 1
     value: 0

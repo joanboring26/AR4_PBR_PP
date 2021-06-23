@@ -1,9 +1,10 @@
-﻿Shader "Unlit/PixellateShader"
+﻿Shader "Custom/PixelateShader"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Pixellization ("Pixellization", Range(0,10)) = 1
+        _Pixelization ("Pixelization", Range(0,100)) = 1
+
     }
     SubShader
     {
@@ -34,6 +35,7 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            float _Pixelization;
 
             v2f vert (appdata v)
             {
@@ -43,11 +45,12 @@
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-                return col;
+                float2 pixel = (_Pixelization, _Pixelization);
+                i.uv = round(i.uv * _Pixelization) / _Pixelization;
+                
+                return tex2D(_MainTex, i.uv);
             }
             ENDCG
         }
