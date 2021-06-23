@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 934147405638611057}
-  - {fileID: 4177939499857588592}
+  - {fileID: 1202059455243178730}
 --- !u!114 &934147405638611057
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -102,6 +102,43 @@ MonoBehaviour:
   quality:
     overrideState: 1
     value: 2
+--- !u!114 &1202059455243178730
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: VignetteShaderSettings
+  m_EditorClassIdentifier: Assembly-CSharp::VignetteShaderSettings
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  lensRadius:
+    overrideState: 1
+    value: 0.683
+  lensFeathering:
+    overrideState: 1
+    value: 0.5
+  positionX:
+    overrideState: 1
+    value: 0.5
+  positionY:
+    overrideState: 1
+    value: 0.5
+  deformationX:
+    overrideState: 1
+    value: 0.411
+  deformationY:
+    overrideState: 1
+    value: 0
+  lensSquaring:
+    overrideState: 1
+    value: 1
 --- !u!114 &4177939499857588592
 MonoBehaviour:
   m_ObjectHideFlags: 3

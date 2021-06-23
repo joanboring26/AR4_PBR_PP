@@ -59,9 +59,8 @@
             {
                 float2 texcoord = i.uv;
 	            float4 color = tex2D( _MainTex, i.uv);
-               /* float dist = distance(texcoord, float2(_PositionX + (texcoord.y * texcoord.y) * _deformationX, 
-                                                       _PositionY + (texcoord.x * texcoord.x) * _deformationY));*/
-                
+             
+               // float dist = distance(pow(abs(texcoord), _lens_squaring), float2(0, 0));
                 float dist = distance(pow(abs(texcoord), _lens_squaring), float2(_PositionX + texcoord.x * _deformationX, _PositionY + texcoord.y * _deformationY));
 
                 float v = smoothstep(_lens_radius,(_lens_radius-0.001)*_lens_feathering, dist);
