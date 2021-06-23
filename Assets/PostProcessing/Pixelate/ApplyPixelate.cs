@@ -11,7 +11,7 @@ using UnityEngine.Rendering.PostProcessing;
 public sealed class PixelateShaderSettings : PostProcessEffectSettings
 {
     [Range(0.0f, 100.0f)]
-    public FloatParameter pixelization = new FloatParameter { value = 0.5f };
+    public FloatParameter pixelization = new FloatParameter { value = 1.0f };
 
 
 }
