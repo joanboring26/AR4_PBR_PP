@@ -156,7 +156,7 @@ MonoBehaviour:
   enabled:
     overrideState: 1
     value: 0
-  pixelization:
+  Pixel_Size:
     overrideState: 0
     value: 1
 --- !u!114 &2769131815057709432
@@ -175,9 +175,9 @@ MonoBehaviour:
   enabled:
     overrideState: 1
     value: 0
-  pixelization:
-    overrideState: 1
-    value: 0.7
+  Pixel_Size:
+    overrideState: 0
+    value: 1
 --- !u!114 &4177939499857588592
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -214,23 +214,23 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   lensRadius:
-    overrideState: 0
+    overrideState: 1
     value: 0.5
   lensFeathering:
-    overrideState: 0
+    overrideState: 1
     value: 0.5
   positionX:
-    overrideState: 0
+    overrideState: 1
     value: 0.5
   positionY:
-    overrideState: 0
+    overrideState: 1
     value: 0.5
   deformationX:
-    overrideState: 0
+    overrideState: 1
     value: 0
   deformationY:
-    overrideState: 0
+    overrideState: 1
     value: 0
   lensSquaring:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
