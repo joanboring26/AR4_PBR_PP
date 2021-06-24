@@ -11,7 +11,7 @@ using UnityEngine.Rendering.PostProcessing;
 public sealed class PixelateShaderSettings : PostProcessEffectSettings
 {
     [Range(0.0f, 100.0f)]
-    public FloatParameter pixelization = new FloatParameter { value = 1.0f };
+    public FloatParameter Pixel_Size = new FloatParameter { value = 1.0f };
 
 
 }
@@ -23,7 +23,7 @@ public class PixelateShader : PostProcessEffectRenderer<PixelateShaderSettings>
     {
         var sheet = context.propertySheets.Get(Shader.Find("Custom/PixelateShader"));
 
-        sheet.properties.SetFloat("_Pixelization", settings.pixelization);
+        sheet.properties.SetFloat("_Pixel_Size", settings.Pixel_Size);
 
         context.command.BlitFullscreenTriangle(context.source, context.destination, sheet, 0);//, sheet, 0);
     }

@@ -3,7 +3,7 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Pixelization ("Pixelization", Range(0,100)) = 1
+        _Pixel_Size ("Pixel Size", Range(0,100)) = 1
 
     }
     SubShader
@@ -35,7 +35,8 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            float _Pixelization;
+            float _Pixel_Size;
+            float2 _resolution;
 
             v2f vert (appdata v)
             {
@@ -47,8 +48,8 @@
 
             fixed4 frag(v2f i) : SV_Target
             {
-                float2 pixel = (_Pixelization, _Pixelization);
-                i.uv = round(i.uv * _Pixelization) / _Pixelization;
+                float2 pixel = _resolution / _Pixel_Size;
+                i.uv = round(i.uv * pixel) / pixel;
                 
                 return tex2D(_MainTex, i.uv);
             }

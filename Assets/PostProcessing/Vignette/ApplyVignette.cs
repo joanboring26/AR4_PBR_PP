@@ -12,11 +12,15 @@ public sealed class VignetteShaderSettings : PostProcessEffectSettings
 {
     [Range(0.0f, 1.0f)]
     public FloatParameter lensRadius = new FloatParameter { value = 0.5f };
+    [Range(0.0f, 1.0f)]
     public FloatParameter lensFeathering = new FloatParameter { value = 0.5f };
+    [Range(0.0f, 1.0f)]
     public FloatParameter positionX = new FloatParameter { value = 0.5f };
+    [Range(0.0f, 1.0f)]
     public FloatParameter positionY = new FloatParameter { value = 0.5f };
     [Range(-1.0f, 1.0f)]
     public FloatParameter deformationX = new FloatParameter { value = 0.0f };
+    [Range(-1.0f, 1.0f)]
     public FloatParameter deformationY = new FloatParameter { value = 0.0f };
     [Range(1.0f, 10.0f)]
     public FloatParameter lensSquaring = new FloatParameter { value = 0.0f };
