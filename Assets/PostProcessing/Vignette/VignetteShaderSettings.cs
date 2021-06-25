@@ -41,8 +41,8 @@ public class VignetteShader : PostProcessEffectRenderer<VignetteShaderSettings>
         sheet.properties.SetFloat("_lens_feathering", settings.lensFeathering);
         sheet.properties.SetFloat("_PositionX", settings.positionX);
         sheet.properties.SetFloat("_PositionY", settings.positionY);
-        sheet.properties.SetFloat("deformation_X", settings.deformationX);
-        sheet.properties.SetFloat("deformation_Y", settings.deformationY);
+        sheet.properties.SetFloat("_deformationX", settings.deformationX);
+        sheet.properties.SetFloat("_deformationY", settings.deformationY);
 
 
         context.command.BlitFullscreenTriangle(context.source, context.destination,sheet,0);//, sheet, 0);

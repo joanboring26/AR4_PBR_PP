@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 934147405638611057}
-  - {fileID: 5669886623068707846}
+  - {fileID: 8738612421751167790}
 --- !u!114 &934147405638611057
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -155,9 +155,18 @@ MonoBehaviour:
   enabled:
     overrideState: 1
     value: 0
-  Pixel_Size:
+  Pixel_SizeX:
     overrideState: 0
     value: 1
+  Pixel_SizeY:
+    overrideState: 0
+    value: 1
+  ResolutionX:
+    overrideState: 0
+    value: 1920
+  ResolutionY:
+    overrideState: 0
+    value: 1080
 --- !u!114 &2769131815057709432
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -174,9 +183,18 @@ MonoBehaviour:
   enabled:
     overrideState: 1
     value: 0
-  Pixel_Size:
+  Pixel_SizeX:
     overrideState: 0
     value: 1
+  Pixel_SizeY:
+    overrideState: 0
+    value: 1
+  ResolutionX:
+    overrideState: 0
+    value: 1920
+  ResolutionY:
+    overrideState: 0
+    value: 1080
 --- !u!114 &4177939499857588592
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -269,4 +287,26 @@ MonoBehaviour:
     value: 0
   lensSquaring:
     overrideState: 1
+    value: 1
+--- !u!114 &8738612421751167790
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: ToneMappingSettings
+  m_EditorClassIdentifier: Assembly-CSharp::ToneMappingSettings
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  Exposure:
+    overrideState: 0
+    value: 1
+  Gamma:
+    overrideState: 0
     value: 1

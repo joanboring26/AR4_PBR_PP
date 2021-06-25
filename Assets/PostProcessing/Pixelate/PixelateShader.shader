@@ -1,59 +1,39 @@
 ﻿Shader "Custom/PixelateShader"
 {
-    Properties
-    {
-        _MainTex ("Texture", 2D) = "white" {}
-        _Pixel_Size ("Pixel Size", Range(0,100)) = 1
+    HLSLINCLUDE
 
+#include "Packages/com.unity.postprocessing/PostProcessing/Shaders/StdLib.hlsl"
+
+        TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
+    float _Blend;
+    float _resolutionX;
+    float _resolutionY;
+    float _pixelSizeX;
+    float _pixelSizeY;
+
+    float4 Frag(VaryingsDefault i) : SV_Target
+    {
+        float2 pixelation = (_resolutionX / _pixelSizeY, _resolutionY / _pixelSizeX);
+        i.texcoord = round(i.texcoord * pixelation) / pixelation;
+        
+        return SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoord);
     }
-    SubShader
+
+        ENDHLSL
+
+        SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 100
+        Cull Off ZWrite Off ZTest Always
 
-        Pass
+            Pass
         {
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            // make fog work
-            #pragma multi_compile_fog
+            HLSLPROGRAM
 
-            #include "UnityCG.cginc"
+                #pragma vertex VertDefault
+                #pragma fragment Frag
 
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
-
-            struct v2f
-            {
-                float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
-            };
-
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
-            float _Pixel_Size;
-            float2 _resolution;
-
-            v2f vert (appdata v)
-            {
-                v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                return o;
-            }
-
-            fixed4 frag(v2f i) : SV_Target
-            {
-                float2 pixel = _resolution / _Pixel_Size;
-                i.uv = round(i.uv * pixel) / pixel;
-                
-                return tex2D(_MainTex, i.uv);
-            }
-            ENDCG
+            ENDHLSL
         }
     }
+
 }
