@@ -89,4 +89,4 @@ Material:
     - _directionalLightDir: {r: 0.82268894, g: 0.5232467, b: 0.22225142, a: 0}
     - _objectColor: {r: 1, g: 1, b: 1, a: 1}
     - _pointLightColor: {r: 0.1577994, g: 0.0800997, b: 0.9433962, a: 0}
-    - _pointLightPos: {r: 1.002, g: 2.397, b: -2.672, a: 0}
+    - _pointLightPos: {r: 1.314, g: 2.397, b: -2.672, a: 0}

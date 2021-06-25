@@ -13,7 +13,7 @@
 
     float4 Frag(VaryingsDefault i) : SV_Target
     {
-        float2 pixelation = (_resolutionX / _pixelSizeY, _resolutionY / _pixelSizeX);
+        float2 pixelation = (_resolutionX / _pixelSizeX, _resolutionY / _pixelSizeY);
         i.texcoord = round(i.texcoord * pixelation) / pixelation;
         
         return SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoord);

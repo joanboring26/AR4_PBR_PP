@@ -38,6 +38,71 @@ MonoBehaviour:
   blend:
     overrideState: 0
     value: 0
+--- !u!114 &-5080437722633102290
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02636dcb74ac7f40814506d54e777e7, type: 3}
+  m_Name: VignetteShaderSettings
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  lensRadius:
+    overrideState: 1
+    value: 1
+  lensFeathering:
+    overrideState: 1
+    value: 0.766
+  positionX:
+    overrideState: 1
+    value: 0.147
+  positionY:
+    overrideState: 1
+    value: 0.191
+  deformationX:
+    overrideState: 1
+    value: 0
+  deformationY:
+    overrideState: 1
+    value: 0
+  lensSquaring:
+    overrideState: 1
+    value: 1
+--- !u!114 &-3536026037626378211
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2636cc562a6e7dc478ff644bc17ddceb, type: 3}
+  m_Name: PixelateShaderSettings
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  Pixel_SizeX:
+    overrideState: 1
+    value: 6.8
+  Pixel_SizeY:
+    overrideState: 1
+    value: 6
+  ResolutionX:
+    overrideState: 1
+    value: 1920
+  ResolutionY:
+    overrideState: 1
+    value: 1080
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,6 +118,8 @@ MonoBehaviour:
   settings:
   - {fileID: 934147405638611057}
   - {fileID: 8738612421751167790}
+  - {fileID: -3536026037626378211}
+  - {fileID: -5080437722633102290}
 --- !u!114 &934147405638611057
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -303,10 +370,16 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 0
-  Exposure:
-    overrideState: 0
     value: 1
+  ExposureR:
+    overrideState: 1
+    value: 2
+  ExposureG:
+    overrideState: 1
+    value: 2.11
+  ExposureB:
+    overrideState: 1
+    value: 2.05
   Gamma:
-    overrideState: 0
+    overrideState: 1
     value: 1
